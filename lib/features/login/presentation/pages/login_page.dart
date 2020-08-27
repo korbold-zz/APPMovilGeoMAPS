@@ -1,7 +1,11 @@
+import 'package:busmart/features/login/presentation/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
+  final _bloc = LoginBloc();
+  final _userControler = TextEditingController(text: '');
+  final _passwordControler = TextEditingController(text: '');
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,6 +23,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Usuario'),
+                  controller: _userControler,
                   validator: (value) {
                     if (value.isEmpty) {
                       return 'Campo Obligatorio';
@@ -29,6 +34,7 @@ class LoginPage extends StatelessWidget {
                 TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(labelText: 'Contraseña'),
+                  controller: _passwordControler,
                   validator: (value) {
                     if (value.isEmpty) {
                       return 'Campo Obligatorio';
@@ -37,9 +43,10 @@ class LoginPage extends StatelessWidget {
                   },
                 ),
                 RaisedButton(
-                  onPressed: () {
+                  onPressed: ()  {
                     if (_formKey.currentState.validate()) {
-                      print('hechos');
+                       _bloc.sendSession(
+                          _userControler.text, _passwordControler.text);
                     }
                   },
                   child: Text('Iniciar Sesión'),

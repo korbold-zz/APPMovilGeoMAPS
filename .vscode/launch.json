@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter tests",
+            "program": "test",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
