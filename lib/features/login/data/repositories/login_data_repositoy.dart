@@ -15,13 +15,45 @@ class LoginDataRepository {
     try {
       _uriResponse = await _cliente.post(apiLogin,
           headers: headers,
-          body: jsonEncode({'password': password, 'username': user}));
+          body: jsonEncode(
+              {'password': password, "rememberMe": true, 'username': user}));
 
       print('Response status: ${_uriResponse.statusCode}');
       print('Response body: ${_uriResponse.body}');
-    } catch (e) {} finally {
+    } catch (e) {
+      print('E R R O R: $e');
+    } finally {
       _cliente.close();
     }
-    return loginModelFromJson(_uriResponse.body);
+    if (_uriResponse.statusCode == 200) {
+      return loginModelFromJson(_uriResponse.body);
+    } else {
+      return null;
+    }
+  }
+
+  postPasswordReset(String email) async {
+    var _uriResponse;
+    final _cliente = http.Client();
+    Map<String, String> headers = {
+      'Content-Type': 'application/json; charset=UTF-8',
+      'accept': '*/*'
+    };
+    try {
+      _uriResponse = await _cliente.post(apirequestPasswordReset,
+          headers: headers, body: (email));
+
+      print('Response status: ${_uriResponse.statusCode}');
+      print('Response body: ${_uriResponse.body}');
+    } catch (e) {
+      print('E R R O R: $e');
+    } finally {
+      _cliente.close();
+    }
+    if (_uriResponse.statusCode == 200) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

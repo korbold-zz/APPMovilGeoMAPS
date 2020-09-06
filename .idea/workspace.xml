@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7121c476-9cf8-4c8e-aa5d-b5755aaab674" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_url.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_url.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/login/data/datasources/api_login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/data/datasources/api_login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/login/data/models/login_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/data/models/login_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/login/data/repositories/login_data_repositoy.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/data/repositories/login_data_repositoy.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/login/presentation/bloc/login_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/presentation/bloc/login_bloc.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/login/presentation/pages/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/presentation/pages/login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/login/data/test_login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/login/data/test_login.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +85,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
