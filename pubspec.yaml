@@ -34,6 +34,11 @@ dependencies:
   jwt_decoder: ^1.0.1
   intro_views_flutter: ^2.8.1
   mapbox_gl: ^0.8.0
+  flutter_map: any
+  location: ^3.0.2
+  latlong: ^0.6.1
+  geolocator: ^6.0.0
+  sliding_sheet: ^0.4.0
 
 dev_dependencies:
   flutter_test:

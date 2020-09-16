@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7121c476-9cf8-4c8e-aa5d-b5755aaab674" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/login/data/datasources/api_login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/data/datasources/api_login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/login/data/models/login_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/data/models/login_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/login/data/repositories/login_data_repositoy.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/data/repositories/login_data_repositoy.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/login/presentation/bloc/login_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/presentation/bloc/login_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/login/presentation/pages/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/presentation/pages/login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_url.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_url.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/presentation/bloc/home_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/presentation/bloc/home_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/presentation/pages/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/presentation/pages/home_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
@@ -44,10 +46,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flutter.main.dart">
+  <component name="RunManager" selected="Flutter Test.Save">
     <configuration name="Login post" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="Login post" />
       <option name="testFile" value="$PROJECT_DIR$/test/login/data/test_login.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Save" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Save" />
+      <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/login_bloc_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Sessions" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Sessions" />
+      <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/login_bloc_test.dart" />
       <method v="2" />
     </configuration>
     <configuration name="login" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
@@ -61,8 +73,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter Test.login" />
+        <item itemvalue="Flutter Test.Save" />
+        <item itemvalue="Flutter Test.Sessions" />
         <item itemvalue="Flutter Test.Login post" />
+        <item itemvalue="Flutter Test.login" />
         <item itemvalue="Flutter Test.tests in test_login.dart" />
       </list>
     </recent_temporary>
@@ -92,26 +106,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/login/data/repositories/login_data_repositoy.dart</url>
-          <line>11</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/login/data/repositories/login_data_repositoy.dart</url>
-          <line>21</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/features/login/presentation/bloc/login_bloc.dart</url>
-          <line>11</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
