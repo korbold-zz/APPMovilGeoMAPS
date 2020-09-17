@@ -6,17 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7121c476-9cf8-4c8e-aa5d-b5755aaab674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_url.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_url.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/home/presentation/bloc/home_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/presentation/bloc/home_bloc.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/home/presentation/pages/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/presentation/pages/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/login/data/test_login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/login/data/test_login.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +18,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_XL_API_29" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -46,7 +41,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flutter Test.Save">
+  <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="Login post" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="Login post" />
       <option name="testFile" value="$PROJECT_DIR$/test/login/data/test_login.dart" />
@@ -62,22 +57,23 @@
       <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/login_bloc_test.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="getRoutes" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="getRoutes" />
+      <option name="testFile" value="$PROJECT_DIR$/test/home/data/respository_test.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="login" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="login" />
       <option name="testFile" value="$PROJECT_DIR$/test/login/data/test_login.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in test_login.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/test/login/data/test_login.dart" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter Test.getRoutes" />
         <item itemvalue="Flutter Test.Save" />
         <item itemvalue="Flutter Test.Sessions" />
         <item itemvalue="Flutter Test.Login post" />
         <item itemvalue="Flutter Test.login" />
-        <item itemvalue="Flutter Test.tests in test_login.dart" />
       </list>
     </recent_temporary>
   </component>
