@@ -1,4 +1,5 @@
 import 'package:busmart/features/home/presentation/bloc/home_bloc.dart';
+import 'package:busmart/features/home/presentation/bloc/home_event.dart';
 import 'package:busmart/features/home/presentation/pages/home_page.dart';
 import 'package:busmart/features/login/presentation/bloc/login_bloc.dart';
 import 'package:busmart/features/login/presentation/widgets/intro_page.dart';
@@ -37,6 +38,8 @@ class _HomeVerifyState extends State<HomeVerify> {
       providers: [
         ChangeNotifierProvider(create: (_) => LoginBloc.instance()),
         ChangeNotifierProvider(create: (_) => HomeBloc()),
+        ChangeNotifierProvider(create: (_) => CameraMoveEvent()),
+
       ],
       child: Consumer(
         // ignore: missing_return

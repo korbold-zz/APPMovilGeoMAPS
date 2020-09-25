@@ -1,13 +1,18 @@
 import 'package:busmart/features/home/data/datasources/api_home.dart';
+import 'package:busmart/features/home/data/models/json_model.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class HomeDataRepository {
-  Future getRoutesEntities() async {
+  final _storage = FlutterSecureStorage();
+  Future<List<RutasModel>> getRoutesEntities() async {
     var _uriResponse;
+    final token = await _storage.read(key: 'jwt');
     final _cliente = http.Client();
     Map<String, String> headers = {
       'Content-Type': 'application/json; charset=UTF-8',
-      'accept': '*/*'
+      'accept': '*/*',
+      'Authorization': 'Bearer $token',
     };
     try {
       _uriResponse = await _cliente.get(
@@ -23,9 +28,10 @@ class HomeDataRepository {
       _cliente.close();
     }
     if (_uriResponse.statusCode == 200) {
-      return null;
+      return rutasModelFromJson(_uriResponse.body);
     } else {
       return null;
     }
+    
   }
 }
