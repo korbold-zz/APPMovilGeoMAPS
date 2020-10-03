@@ -40,6 +40,8 @@ dependencies:
   geolocator: ^6.0.0
   sliding_sheet: ^0.4.0
   google_maps_flutter: ^0.5.32
+  flutter_svg: ^0.19.0
+  lottie: ^0.6.0
 
 dev_dependencies:
   flutter_test:
@@ -55,8 +57,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/img/
+    - assets/svg/logoBlue.svg
+    - assets/animate/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

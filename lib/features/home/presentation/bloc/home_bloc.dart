@@ -44,7 +44,9 @@ class HomeBloc with ChangeNotifier {
 
   Future getALLRoutes() async {
     try {
+      Future.delayed(Duration(seconds: 4));
       final response = await _homeDataRepository.getRoutesEntities();
+      print(response);
       for (var item in response) {
         final res = item.journeyOptional;
 
@@ -57,7 +59,6 @@ class HomeBloc with ChangeNotifier {
     }
   }
 
-  List<RutasModel> _routeModel;
   Future getALLRoutesNames() async {
     try {
       return await _homeDataRepository.getRoutesEntities();

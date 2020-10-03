@@ -1,11 +1,6 @@
-//export BLoc with provider package
+import 'package:busmart/features/login/domain/repositories/login_domain_repository.dart';
 
-import 'package:busmart/features/login/data/models/login_model.dart';
-import 'package:busmart/features/login/data/repositories/login_data_repositoy.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:jwt_decoder/jwt_decoder.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 enum Status {
   Uninitialized,
@@ -15,32 +10,39 @@ enum Status {
 }
 
 class LoginBloc with ChangeNotifier {
-  final _loginDataRepository = LoginDataRepository();
-  final _storage = FlutterSecureStorage();
-  LoginModel _loginModel;
-  SharedPreferences _preferences;
+  // final loginDataRepository = LoginDataRepositoryImpl();
+  final LoginDomainRepository loginDataRepository;
   Status _status = Status.Uninitialized;
   bool _isLoginIn = false;
 
-  LoginBloc.instance() {
+  LoginBloc(this.loginDataRepository) {
     verifyCredentials();
   }
 
-  Future<bool> sendSession({String user, String password}) async {
-    setStatusLogin = Status.Authenticating;
+  set setIsLogin(bool value) {
+    _isLoginIn = value;
     notifyListeners();
-    _loginModel = await _loginDataRepository.postLogin(user, password);
+  }
+
+  set setStatusLogin(Status value1) {
+    _status = value1;
+    notifyListeners();
+  }
+
+  Status get status => _status;
+  bool get isLogin => _isLoginIn;
+
+  Future<bool> sendSession({String user, String password}) async {
+    _status = Status.Authenticating;
+
+    final _loginModel = await loginDataRepository.postLogin(user, password);
     if (_loginModel != null) {
-      setStatusLogin = Status.Authenticated;
+      _status = Status.Authenticated;
       _isLoginIn = true;
-      _storage.write(key: 'jwt', value: _loginModel.idToken);
-      // _preferences.setString('idToken', _loginModel.idToken);
-      _preferences.setString('name', _loginModel.credentials.name);
-      jwtDecode();
       notifyListeners();
       return true;
     } else {
-      setStatusLogin = Status.Unauthenticated;
+      _status = Status.Unauthenticated;
       _isLoginIn = true;
       notifyListeners();
       return false;
@@ -48,52 +50,34 @@ class LoginBloc with ChangeNotifier {
   }
 
   verifyCredentials() async {
-    _preferences = await SharedPreferences.getInstance();
-    if (_preferences.containsKey('name')) {
-      setStatusLogin = Status.Authenticated;
+    final responseSessionCache =
+        await loginDataRepository.verifySessionInCache();
+    if (responseSessionCache) {
+      _status = Status.Authenticated;
       _isLoginIn = true;
       notifyListeners();
+      return Status.Authenticated;
     } else {
-      setStatusLogin = Status.Unauthenticated;
+      _status = Status.Unauthenticated;
       _isLoginIn = false;
+
       notifyListeners();
+      return Status.Unauthenticated;
     }
   }
 
   Future signOut() async {
-    setStatusLogin = Status.Unauthenticated;
-    _preferences.clear();
-    _storage.delete(key: 'jwt');
+    _status = Status.Unauthenticated;
+    loginDataRepository.clearCredentials();
     _isLoginIn = true;
     notifyListeners();
     return Future.delayed(Duration.zero);
   }
 
-  Status get status => _status;
-  bool get isLogin => _isLoginIn;
-
-  set setIsLogin(bool value) {
-    _isLoginIn = value;
-    notifyListeners();
-  }
-
-  set setStatusLogin(Status value) {
-    _status = value;
-    notifyListeners();
-  }
-
-  jwtDecode() async {
-    final token = await _storage.read(key: 'jwt');
-    Map<String, dynamic> decodedToken = JwtDecoder.decode(token);
-    print(decodedToken["sub"]);
-    bool isTokenExpired = JwtDecoder.isExpired(token);
-    print(isTokenExpired);
-  }
-
   /* ------------------postPasswordReset---------------------------------- */
 
   sendPasswordReset({String email}) async {
-    final resp = await _loginDataRepository.postPasswordReset(email);
+    final resp = await loginDataRepository.postPasswordReset(email);
     if (resp) {
       notifyListeners();
       return true;

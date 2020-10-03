@@ -4,7 +4,13 @@ import 'package:busmart/features/login/data/datasources/api_login.dart';
 import 'package:busmart/features/login/data/models/login_model.dart';
 import 'package:http/http.dart' as http;
 
-class LoginDataRepository {
+abstract class DataRemote {
+  Future<LoginModel> postLogin(String user, String password);
+  Future<bool> postPasswordReset(String email);
+}
+
+class DataRemoteImpl implements DataRemote {
+  @override
   Future<LoginModel> postLogin(String user, String password) async {
     var _uriResponse;
     final _cliente = http.Client();
@@ -26,13 +32,15 @@ class LoginDataRepository {
       _cliente.close();
     }
     if (_uriResponse.statusCode == 200) {
+      
       return loginModelFromJson(_uriResponse.body);
     } else {
       return null;
     }
   }
 
-  postPasswordReset(String email) async {
+  @override
+  Future<bool> postPasswordReset(String email) async {
     var _uriResponse;
     final _cliente = http.Client();
     Map<String, String> headers = {

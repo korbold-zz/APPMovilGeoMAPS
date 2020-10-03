@@ -21,16 +21,24 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    
+  }
+
+  void loadMapRoutes() async{
+    final _bloc1 = Provider.of<HomeBloc>(
+      context,
+    );
+    _bloc1.getALLRoutes();
+    await Future.delayed(Duration(seconds: 5));
   }
 
   Widget build(BuildContext context) {
     final _bloc = Provider.of<LoginBloc>(
       context,
     );
-    final _bloc1 = Provider.of<HomeBloc>(
-      context,
+     final _bloc1 = Provider.of<HomeBloc>(
+      context
     );
-    _bloc1.getALLRoutes();
 
     return Scaffold(
       appBar: AppBar(
@@ -83,25 +91,25 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
 
-        // Align(
-        //   alignment: Alignment.bottomCenter,
-        //   child: Container(
-        //       height: 100,
-        //       child: GridView.builder(
-        //           itemCount: _bloc1.getALLRoutesNames().,
-        //           scrollDirection: Axis.horizontal,
-        //           gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-        //               crossAxisCount: 1),
-        //           itemBuilder: (context, value) {
-        //             return Card(
-        //               elevation: 5,
-        //               child: Container(
-        //                 color: Colors.amberAccent,
-        //                 width: 200,
-        //               ),
-        //             );
-        //           })),
-        // )
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+              height: 100,
+              child: GridView.builder(
+                  itemCount: 6,
+                  scrollDirection: Axis.horizontal,
+                  gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 1),
+                  itemBuilder: (context, value) {
+                    return Card(
+                      elevation: 5,
+                      child: Container(
+                        color: Colors.amberAccent,
+                        width: 300,
+                      ),
+                    );
+                  })),
+        )
         // SlidingWidget(),
       ]),
       // floatingActionButton: FloatingActionButton(

@@ -1,5 +1,7 @@
+import 'package:busmart/features/login/domain/repositories/login_domain_repository.dart';
 import 'package:busmart/features/login/presentation/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class PasswordResetPage extends StatefulWidget {
   const PasswordResetPage({Key key}) : super(key: key);
@@ -22,7 +24,9 @@ class _PasswordResetPageState extends State<PasswordResetPage> {
 
   @override
   Widget build(BuildContext context) {
-    final _bloc = LoginBloc.instance();
+    final _loginRepository = Provider.of<LoginDomainRepository>(context);
+
+    final _bloc = LoginBloc(_loginRepository);
     return SafeArea(
       child: Scaffold(
         key: _scaffolKey,

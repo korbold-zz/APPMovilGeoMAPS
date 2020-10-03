@@ -1,0 +1,65 @@
+[
+    {
+        "id": 2201,
+        "name": "Prueba No 3",
+        "description": "solo para test",
+        "enabled": true,
+        "journey": "eyJ0eXBlIjoiRmVhdHVyZUNvbGxlY3Rpb24iLCJmZWF0dXJlcyI6W3sidHlwZSI6IkZlYXR1cmUiLCJwcm9wZXJ0aWVzIjp7fSwiZ2VvbWV0cnkiOnsidHlwZSI6IkxpbmVTdHJpbmciLCJjb29yZGluYXRlcyI6W1stNzguNTA0Nzc5Mzg0MzI1NzMsLTAuMjE2NTAwMjM2MjAwNDQ1NzhdLFstNzguNTA0MjYzODI2OTE0LC0wLjIxNTcwODE0OTIzNjY2MTQ4XSxbLTc4LjUwMzc0NTY0MjgwNTY1LC0wLjIxNDg1MjYzNDQxMTA4NzddLFstNzguNTAyNzIxMjAyMzc1NCwtMC4yMTMwMTQ1MzM2NTc3NDEzN10sWy03OC41MDE3NDU2Nzg3ODkzOCwtMC4yMTExMTIzNTg5NDM2MjMyNF0sWy03OC41MDEyODg2NDA3MzU1LC0wLjIxMDE3Njc1MTY4MTg3MTFdLFstNzguNTAwODU4Njg3ODAwNzcsLTAuMjA5MjcyNTM1MzMzNjEwNjhdLFstNzguNTAwNDYwNzcxOTUzOSwtMC4yMDg0MTU1MTMwNDEyMDI4N10sWy03OC41MDAwOTk4NDUxNjQwNywtMC4yMDc2MjE0ODc5NDk0MTAyN10sWy03OC40OTk3ODA4NTk0MDA5NiwtMC4yMDY5MDYyNjMyMDUyNjkxN10sWy03OC40OTk1MDg3NjY2MzMyOCwtMC4yMDYyODU2NDE5NTk0Mzk2Nl0sWy03OC40OTkyODg1MTg4MzAyOCwtMC4yMDU3NzU0MjczNjA3MDU5OF0sWy03OC40OTkxMjUwNjc5NjE1NCwtMC4yMDUzOTE0MjI1NjA0OTU1OF0sWy03OC40OTkwMjMzNjU5OTYzNCwtMC4yMDUxNDk0MzA3MDYxODU4NV0sWy03OC40OTg5OTcyMTgzNDI5NCwtMC4yMDUwODY2MjgxMTgyMjM3Nl0sWy03OC40OTg5ODgzNjQ5MDM4MSwtMC4yMDUwNjUyNTQ5NDUyOTYyNl0sWy03OC40OTU5NjA1NzMwMjMxMywtMC4xOTgwOTg0MzcxNDAwNjA5Ml0sWy03OC40ODY1ODMyMzcwMDUzOCwtMC4yMDIxMjU2Njk3MzY4NzI3NF1dfX0seyJ0eXBlIjoiRmVhdHVyZSIsInByb3BlcnRpZXMiOnt9LCJnZW9tZXRyeSI6eyJ0eXBlIjoiTGluZVN0cmluZyIsImNvb3JkaW5hdGVzIjpbWy03OC40ODY1ODMyMzcwMTI5NCwtMC4yMDIwOTYyNzM4OTM4MTUyNF0sWy03OC40ODYwODU2NTIwMjAyOCwtMC4yMDExNjM4NTYxNTU0ODg5M10sWy03OC40ODU2MTc0ODgxODM2LC0wLjIwMDI4MzY5MjA4NTIwNzU4XSxbLTc4LjQ4NTE3Nzg1MTk5NjA2LC0wLjE5OTQ1NDI5NjEwOTY3ODM1XSxbLTc4LjQ4NDc2NTg0OTk0OTc1LC0wLjE5ODY3NDE4MjY1NTg2NDIzXSxbLTc4LjQ4NDM4MDU4ODUzNjk0LC0wLjE5Nzk0MTg2NjE0Nzk0Mjg1XSxbLTc4LjQ4NDAyMTE3NDI1MTIxLC0wLjE5NzI1NTg2MTAxMTI4NTU2XSxbLTc4LjQ4MzY4NjcxMzU4Mzc1LC0wLjE5NjYxNDY4MTY2ODY0ODkzXSxbLTc4LjQ4MzM3NjMxMzAyODIsLTAuMTk2MDE2ODQyNTQ0MTExMTFdLFstNzguNDgzMDg5MDc5MDc2MzEsLTAuMTk1NDYwODU4MDYwMTE2MDRdLFstNzguNDgyODI0MTE4MjIwNjYsLTAuMTk0OTQ1MjQyNjM3NzcxOF0sWy03OC40ODIzNTc0NDE3NjkzNywtMC4xOTQwMjkxNzY2Njc4OTY3Nl0sWy03OC40ODE5NjkxMzU2MTMxNiwtMC4xOTMyNTY3NTk5OTkwNDQ5XSxbLTc4LjQ4MTY1MjA1MTY5MzI3LC0wLjE5MjYxNjEwNzk5NDAyNzE3XSxbLTc4LjQ4MTM5OTA0MTk0OTEyLC0wLjE5MjA5NTMzNjAwNzkwOTYyXSxbLTc4LjQ4MTIwMjk1ODMyMDk5LC0wLjE5MTY4MjU1OTM5MTMzODddLFstNzguNDgxMDU2NjUyNzQ4NjksLTAuMTkxMzY1ODkzNDkyNjAxOV0sWy03OC40ODA5NTI5NzcxNzIxMSwtMC4xOTExMzM0NTM2NTgyMTAzM10sWy03OC40ODA4ODQ3ODM1MzE5OCwtMC4xOTA5NzMzNTUyMjk3ODY1M10sWy03OC40ODA4NDQ5MjM3NjgxNSwtMC4xOTA4NzM3MTM1NDk1MjE1NF0sWy03OC40ODA4MjE2MTM2Mjg2OCwtMC4xOTA4MDgyNjE3OTc5OTcxNV0sWy03OC40ODA4MzUzOTMwMjE3NCwtMC4xOTA3NjQxNjc5ODUxNzkyNl0sWy03OC40ODA4NjU3MDc2ODU1MiwtMC4xOTA2NTM5MzM0NTQ1MTI5OF0sWy03OC40ODA5MDk4MDE3NDE4NiwtMC4xOTAzNjczMjM2NzEyNjc3NF0sWy03OC40ODA4OTU5MzYyMjgsLTAuMTkwMzAzMjY0MjAzMTM3N10sWy03OC40ODA4NTY3NTEwNzk5OCwtMC4xOTAxODI3OTU2NTU1MzA4N10sWy03OC40ODA3OTU4NjMzODg5OCwtMC4xOTAwMTQyNzE3NDA5MzUyMV0sWy03OC40ODA3MTY4OTAyNDQ3OCwtMC4xODk4MDYwNDYxNjYzNTMzM10sWy03OC40ODA1MTkxNTU5NjAyNSwtMC4xODkzMDM5MDQ4ODAyOTA0N10sWy03OC40ODAyOTI0ODQ5NTA4LC0wLjE4ODc0MzIwMTQ3ODIxNzc3XSxbLTc4LjQ4MDA2NTgxMzk0MTgyLC0wLjE4ODE5MDc2NTY0OTU3OTgyXSxbLTc4LjQ3OTg2ODA3OTY1NjgyLC0wLjE4NzcxMzQyNzA5MTA0MDMzXSxbLTc4LjQ3OTc4OTEwNjUxMjY0LC0wLjE4NzUyMzgwMzU2OTg2MDFdLFstNzguNDc5NzI4MjE4ODIxNjUsLTAuMTg3Mzc4MDE1NTA0MTM3MzVdLFstNzguNDc5Njg5MDMzNjczNjIsLTAuMTg3Mjg0NDE2NjA5MjczM10sWy03OC40Nzk2NzUxNjgxNTk3OSwtMC4xODcyNTEzNjA1OTc0NTc1XV19fSx7InR5cGUiOiJGZWF0dXJlIiwicHJvcGVydGllcyI6e30sImdlb21ldHJ5Ijp7InR5cGUiOiJMaW5lU3RyaW5nIiwiY29vcmRpbmF0ZXMiOltbLTc4LjQ3OTYxNjM3NjEwODgyLC0wLjE4NzIyMTk2NDc0NTQzMjk2XSxbLTc4LjQ3NjExODI0NzYyNTY5LC0wLjE3MDc2MDI2NDAzMDk0NjAyXSxbLTc4LjQ4NjQ2NTY1Mjg4NjA4LC0wLjE2ODczMTk0NjMzNDU2MDIzXSxbLTc4LjQ4NjI1OTg4MDYyMjU3LC0wLjE2NjY3NDIzMjUxMTA3MDM5XSxbLTc4LjQ4MzUyNjA0OTExOTQ5LC0wLjE2NDE3NTU3OTcyMzMzNDRdXX19LHsidHlwZSI6IkZlYXR1cmUiLCJwcm9wZXJ0aWVzIjp7fSwiZ2VvbWV0cnkiOnsidHlwZSI6IkxpbmVTdHJpbmciLCJjb29yZGluYXRlcyI6W1stNzguNDgzNTg0ODQxMTk5NjQsLTAuMTY0MjYzNzY3NTEzMzYxMzZdLFstNzguNDc1NTAwOTMwODM5MzksLTAuMTY1NzMzNTYzMzAzNDA1MTZdLFstNzguNDc1MDAxMTk4MTk4NzEsLTAuMTYzMzUyNDk0MDcwOTIwNzhdLFstNzguNDY4MDM0MzM3MjcwMTQsLTAuMTY0NTU3NzI2NjgxMTUyODddLFstNzguNDY0NDc3NDE2NzEyMDQsLTAuMTUyMjk5NjI1ODU1MzYzMjddXX19LHsidHlwZSI6IkZlYXR1cmUiLCJwcm9wZXJ0aWVzIjp7fSwiZ2VvbWV0cnkiOnsidHlwZSI6IkxpbmVTdHJpbmciLCJjb29yZGluYXRlcyI6W119fV19",
+        "journeyContentType": "application/json",
+        "journeyOptional": "{\"coordinates\": [                    [                        -0.21650023620044578,                        -78.50477938432573                    ],                    [                        -0.21570814923666148,                        -78.504263826914                    ],                    [                        -0.2148526344110877,                        -78.50374564280565                    ],                    [                        -0.21301453365774137,                        -78.5027212023754                    ],                    [                        -0.21111235894362324,                        -78.50174567878938                    ],                    [                        -0.2101767516818711,                        -78.5012886407355                    ],                    [                        -0.20927253533361068,                        -78.50085868780077                    ],                    [                        -0.20841551304120287,                        -78.5004607719539                    ],                    [                        -0.20762148794941027,                        -78.50009984516407                    ],                    [                        -0.20690626320526917,                        -78.49978085940096                    ],                    [                        -0.20628564195943966,                        -78.49950876663328                    ],                    [                        -0.20577542736070598,                        -78.49928851883028                    ],                    [                        -0.20539142256049558,                        -78.49912506796154                    ],                    [                        -0.20514943070618585,                        -78.49902336599634                    ],                    [                        -0.20508662811822376,                        -78.49899721834294                    ],                    [                        -0.20506525494529626,                        -78.49898836490381                    ],                    [                        -0.19809843714006092,                        -78.49596057302313                    ],                    [                        -0.20212566973687274,                        -78.48658323700538                    ]                ]            }",
+        "company": {
+            "id": 1251,
+            "name": "CA-TAR",
+            "legalRepresentative": "Empresa de Transportes CARCELEN - TARQUI CA-TAR",
+            "dni": "1790710025001",
+            "enabled": true,
+            "companyType": {
+                "id": 1201,
+                "name": "Privada",
+                "description": "Compania Privada"
+            }
+        }
+    },
+    {
+        "id": 1401,
+        "name": "Condado - Congreso",
+        "description": "Lunes a Viernes de 5h00 a 20h00",
+        "enabled": true,
+        "journey": null,
+        "journeyContentType": null,
+        "journeyOptional": "{                                \"coordinates\": [                    [                        0.35202334859913265,                        -78.12685826626091                    ],                    [                        0.3525786301396465,                        -78.12588311926717                    ],                    [                        0.35176602299564763,                        -78.1254090894783                    ],                    [                        0.3520820368940889,                        -78.12494860339812                    ],                    [                        0.3513506904275374,                        -78.12458292327554                    ]                ]            }",
+        "company": {
+            "id": 1251,
+            "name": "CA-TAR",
+            "legalRepresentative": "Empresa de Transportes CARCELEN - TARQUI CA-TAR",
+            "dni": "1790710025001",
+            "enabled": true,
+            "companyType": {
+                "id": 1201,
+                "name": "Privada",
+                "description": "Compania Privada"
+            }
+        }
+    },
+    {
+        "id": 1851,
+        "name": "Prueb2",
+        "description": "prueba2",
+        "enabled": true,
+        "journey": null,
+        "journeyContentType": null,
+        "journeyOptional": "{    \"coordinates\": [        [            0.35065874623049353,            -78.12585885519684        ],        [            0.35106669261016066,            -78.12505959832518        ],        [            0.35002601303560255,            -78.12451843481797        ],        [            0.3499177823534154,            -78.12394396894116        ],        [            0.3497929007955207,            -78.12318634003154        ],        [            0.35064209535750024,            -78.12303647936777        ]    ]}",
+        "company": {
+            "id": 1251,
+            "name": "CA-TAR",
+            "legalRepresentative": "Empresa de Transportes CARCELEN - TARQUI CA-TAR",
+            "dni": "1790710025001",
+            "enabled": true,
+            "companyType": {
+                "id": 1201,
+                "name": "Privada",
+                "description": "Compania Privada"
+            }
+        }
+    }
+]
