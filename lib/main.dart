@@ -1,3 +1,7 @@
+import 'dart:io';
+
+import 'package:busmart/features/home/data/repositories/home_data_repository_impl.dart';
+import 'package:busmart/features/home/domain/repositories/home_domain_repository.dart';
 import 'package:busmart/features/home/presentation/bloc/home_bloc.dart';
 import 'package:busmart/features/home/presentation/pages/home_page.dart';
 import 'package:busmart/features/login/data/repositories/login_data_repositoy_impl.dart';
@@ -7,11 +11,16 @@ import 'package:busmart/features/login/presentation/bloc/login_event.dart';
 import 'package:busmart/features/login/presentation/widgets/intro_page.dart';
 import 'package:busmart/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
+import 'features/home/presentation/bloc/home_event.dart';
 import 'features/login/presentation/pages/login_page.dart';
 
 void main() {
+  // Directory appDocumentDir = await getApplicationDocumentsDirectory();
+  // Hive.init(appDocumentDir.path);
   runApp(MyApp());
 }
 
@@ -41,9 +50,12 @@ class _HomeVerifyState extends State<HomeVerify> {
         Provider<LoginDomainRepository>(
             create: (_) => LoginDataRepositoryImpl()),
 
-        ChangeNotifierProvider(create: (_) => HomeBloc()),
+        Provider<HomeDomainRepositoryINTERFACE>(
+          create: (_) => HomeDataRepositoryIMPL(),
+        ),
+        // ChangeNotifierProvider(create: (_) => HomeBloc()),
         ChangeNotifierProvider(create: (_) => LoginEvent()),
-        // ChangeNotifierProvider(create: (_) => CameraMoveEvent()),
+        ChangeNotifierProvider(create: (_)=> HomeCameraMoveEvent(),)
       ],
       child: Builder(builder: (nContext) {
         return ConsumerSelect.init(nContext);
@@ -75,7 +87,7 @@ class ConsumerSelect extends StatelessWidget {
             case Status.Authenticating:
               return LoginPage();
             case Status.Authenticated:
-              return HomePage();
+              return HomePage.init(context);
           }
         } else {
           return IntroPage();

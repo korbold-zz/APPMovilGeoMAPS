@@ -1,13 +1,17 @@
 import 'package:busmart/features/home/data/datasources/api_home.dart';
 import 'package:busmart/features/home/data/models/json_model.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
 import 'package:http/http.dart' as http;
 
-class HomeDataRepository {
-  final _storage = FlutterSecureStorage();
-  Future<List<RutasModel>> getRoutesEntities() async {
+abstract class HomeDataRemote {
+  Future<List<RoutesModel>> getRoutesEntities(String token);
+}
+
+class HomeDataRemoteImpl implements HomeDataRemote {
+  @override
+  Future<List<RoutesModel>> getRoutesEntities(String token) async {
     var _uriResponse;
-    final token = await _storage.read(key: 'jwt');
+
     final _cliente = http.Client();
     Map<String, String> headers = {
       'Content-Type': 'application/json; charset=UTF-8',
@@ -32,6 +36,5 @@ class HomeDataRepository {
     } else {
       return null;
     }
-    
   }
 }

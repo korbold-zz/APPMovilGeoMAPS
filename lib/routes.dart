@@ -9,7 +9,7 @@ routes<String, WidgetBuilder>(
 ) {
   return {
     '/': (context) => HomeVerify(),
-    '/home': (context) => HomePage(),
+    '/home': (context) => HomePage.init(context),
     '/RegisterPage': (context) => RegisterPage(),
     '/PasswordResetPage': (context) => PasswordResetPage(),
   };

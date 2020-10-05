@@ -1,45 +1,37 @@
-import 'dart:async';
-
-import 'package:busmart/features/home/data/models/home_model.dart';
+import 'package:busmart/features/home/domain/repositories/home_domain_repository.dart';
 import 'package:busmart/features/home/presentation/bloc/home_bloc.dart';
-import 'package:busmart/features/home/presentation/bloc/home_event.dart';
-import 'package:busmart/features/home/presentation/pages/data.dart';
+
 import 'package:busmart/features/home/presentation/widgets/sliding_widget.dart';
 import 'package:busmart/features/login/presentation/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
-// import "package:latlong/latlong.dart" as latLng;
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
+GoogleMapController mapController;
+
+CameraPosition _initialPosition =
+    CameraPosition(target: LatLng(12.949798, 77.470534), zoom: 16);
+
+void _onMapCreated(GoogleMapController controller) {
+  mapController = controller;
 }
 
-class _HomePageState extends State<HomePage> {
-  @override
-  @override
-  void initState() {
-    super.initState();
-    
-  }
+class HomePage extends StatelessWidget {
+  HomePage._();
 
-  void loadMapRoutes() async{
-    final _bloc1 = Provider.of<HomeBloc>(
-      context,
+  static Widget init(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) =>
+          HomeBloc(Provider.of<HomeDomainRepositoryINTERFACE>(context))
+            ..getNewRoutes(),
+      builder: (_, __) => HomePage._(),
     );
-    _bloc1.getALLRoutes();
-    await Future.delayed(Duration(seconds: 5));
   }
 
+  @override
   Widget build(BuildContext context) {
-    final _bloc = Provider.of<LoginBloc>(
-      context,
-    );
-     final _bloc1 = Provider.of<HomeBloc>(
-      context
-    );
-
+    final _bloc = Provider.of<LoginBloc>(context);
+    final _homeBloc = Provider.of<HomeBloc>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
@@ -94,21 +86,18 @@ class _HomePageState extends State<HomePage> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-              height: 100,
-              child: GridView.builder(
-                  itemCount: 6,
-                  scrollDirection: Axis.horizontal,
-                  gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1),
-                  itemBuilder: (context, value) {
-                    return Card(
-                      elevation: 5,
-                      child: Container(
-                        color: Colors.amberAccent,
-                        width: 300,
-                      ),
-                    );
-                  })),
+            height: 70,
+            child: ListView.builder(
+                itemCount: _homeBloc.getNewRoutes().length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, value) {
+                  final data = _homeBloc.getNewRoutes()[value];
+                  return CardRoute(
+                    name: data.name,
+                    latLng: LatLng(data.route[0][0], data.route[0][1]),
+                  );
+                }),
+          ),
         )
         // SlidingWidget(),
       ]),
@@ -118,12 +107,36 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-CameraPosition _initialPosition = CameraPosition(
-    target: LatLng(0.35202334859913265, -78.12685826626091), zoom: 16);
-Completer<GoogleMapController> _controller = Completer();
+class CardRoute extends StatelessWidget {
+  final LatLng latLng;
+  final String name;
+  const CardRoute({
+    Key key,
+    this.latLng,
+    this.name,
+  }) : super(key: key);
 
-void _onMapCreated(GoogleMapController controller) {
-  _controller.complete(controller);
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: Container(
+        color: Colors.blue,
+        width: 200,
+        child: Card(
+            elevation: 5,
+            child: ListTile(
+              title: Text(name),
+            )),
+      ),
+      onTap: () {
+        mapController.animateCamera(
+          CameraUpdate.newCameraPosition(
+            CameraPosition(target: latLng, zoom: 15.0),
+          ),
+        );
+      },
+    );
+  }
 }
 
 class _Map extends StatefulWidget {
@@ -132,20 +145,42 @@ class _Map extends StatefulWidget {
 }
 
 class __MapState extends State<_Map> {
+  Set<Polyline> lines = {};
+
+  @override
+  void initState() {
+    lines.add(
+      Polyline(
+        points: [
+          LatLng(-0.1795829, -78.480656),
+          LatLng(-0.179717, -78.4798996),
+          LatLng(-0.1817554, -78.4803019),
+          LatLng(-0.1821524, -78.4788643),
+          LatLng(-0.1845723, -78.4791322),
+        ],
+        endCap: Cap.squareCap,
+        geodesic: false,
+        polylineId: PolylineId("line_one"),
+      ),
+    );
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final _bloc = Provider.of<HomeBloc>(context);
+    final _bloc = Provider.of<HomeBloc>(context, listen: false);
 
-    final _cameraEvent = Provider.of<CameraMoveEvent>(context);
     return GoogleMap(
       initialCameraPosition: _initialPosition,
       onMapCreated: _onMapCreated,
-      onCameraMove: _cameraEvent.getCameraMove,
+      // onCameraMove: _cameraEvent.getCameraMove,
       myLocationButtonEnabled: true,
       mapType: MapType.normal,
       zoomGesturesEnabled: true,
       zoomControlsEnabled: false,
       polylines: _bloc.getRoutes2,
+      markers: _bloc.getMarkers,
     );
   }
 }

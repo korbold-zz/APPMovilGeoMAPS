@@ -4,12 +4,12 @@
 
 import 'dart:convert';
 
-List<RutasModel> rutasModelFromJson(String str) => List<RutasModel>.from(json.decode(str).map((x) => RutasModel.fromJson(x)));
+List<RoutesModel> rutasModelFromJson(String str) => List<RoutesModel>.from(json.decode(str).map((x) => RoutesModel.fromJson(x)));
 
-String rutasModelToJson(List<RutasModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String rutasModelToJson(List<RoutesModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class RutasModel {
-    RutasModel({
+class RoutesModel {
+    RoutesModel({
         this.id,
         this.name,
         this.description,
@@ -29,7 +29,7 @@ class RutasModel {
     String journeyOptional;
     Company company;
 
-    factory RutasModel.fromJson(Map<String, dynamic> json) => RutasModel(
+    factory RoutesModel.fromJson(Map<String, dynamic> json) => RoutesModel(
         id: json["id"],
         name: json["name"],
         description: json["description"],

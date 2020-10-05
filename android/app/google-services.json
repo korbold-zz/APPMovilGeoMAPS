@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1078396126311",
+    "firebase_url": "https://pruebabusmart.firebaseio.com",
+    "project_id": "pruebabusmart",
+    "storage_bucket": "pruebabusmart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078396126311:android:64f744ac85379797d000c2",
+        "android_client_info": {
+          "package_name": "com.ec.busmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078396126311-o3cafkg20tdvimtqjs95skm6e3br9jm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR7V5nwmjBHSRVn1H6BXww-80kjRWwsCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078396126311-o3cafkg20tdvimtqjs95skm6e3br9jm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
