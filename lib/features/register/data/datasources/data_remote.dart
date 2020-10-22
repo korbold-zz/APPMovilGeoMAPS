@@ -2,8 +2,7 @@ import 'dart:convert';
 
 import 'package:busmart/features/register/data/datasources/api_register.dart';
 import 'package:http/http.dart' as http;
-
-class RegisterDataRepository {
+class RegisterDataRemote {
   Future<bool> postRegister(
      { String dni,
       String firstName,
@@ -40,10 +39,11 @@ class RegisterDataRepository {
     } finally {
       _cliente.close();
     }
-    if (_uriResponse.statusCode == 200) {
+    if (_uriResponse.statusCode == 201) {
       return true;
     } else {
       return false;
     }
   }
+  
 }

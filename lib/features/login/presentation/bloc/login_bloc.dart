@@ -11,7 +11,7 @@ enum Status {
 
 class LoginBloc with ChangeNotifier {
   // final loginDataRepository = LoginDataRepositoryImpl();
-  final LoginDomainRepository loginDataRepository;
+  final LoginDomainRepositoryINTERFACE loginDataRepository;
   Status _status = Status.Uninitialized;
   bool _isLoginIn = false;
 
@@ -49,29 +49,29 @@ class LoginBloc with ChangeNotifier {
     }
   }
 
-  verifyCredentials() async {
+ Future<bool> verifyCredentials() async {
     final responseSessionCache =
         await loginDataRepository.verifySessionInCache();
     if (responseSessionCache) {
       _status = Status.Authenticated;
       _isLoginIn = true;
       notifyListeners();
-      return Status.Authenticated;
+      return true;
     } else {
       _status = Status.Unauthenticated;
       _isLoginIn = false;
 
       notifyListeners();
-      return Status.Unauthenticated;
+      return false;
     }
   }
 
   Future signOut() async {
     _status = Status.Unauthenticated;
-    loginDataRepository.clearCredentials();
+    final result =loginDataRepository.clearCredentials();
     _isLoginIn = true;
     notifyListeners();
-    return Future.delayed(Duration.zero);
+    return result ;
   }
 
   /* ------------------postPasswordReset---------------------------------- */

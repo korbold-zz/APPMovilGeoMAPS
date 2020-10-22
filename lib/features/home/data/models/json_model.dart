@@ -1,12 +1,12 @@
 // To parse this JSON data, do
 //
-//     final rutasModel = rutasModelFromJson(jsonString);
+//     final routesModel = routesModelFromJson(jsonString);
 
 import 'dart:convert';
 
-List<RoutesModel> rutasModelFromJson(String str) => List<RoutesModel>.from(json.decode(str).map((x) => RoutesModel.fromJson(x)));
+List<RoutesModel> routesModelFromJson(String str) => List<RoutesModel>.from(json.decode(str).map((x) => RoutesModel.fromJson(x)));
 
-String rutasModelToJson(List<RoutesModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String routesModelToJson(List<RoutesModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class RoutesModel {
     RoutesModel({
@@ -14,30 +14,24 @@ class RoutesModel {
         this.name,
         this.description,
         this.enabled,
-        this.journey,
-        this.journeyContentType,
-        this.journeyOptional,
         this.company,
+        this.coordinates,
     });
 
     int id;
     String name;
     String description;
     bool enabled;
-    dynamic journey;
-    dynamic journeyContentType;
-    String journeyOptional;
-    Company company;
+    dynamic company;
+    List<Coordinate> coordinates;
 
     factory RoutesModel.fromJson(Map<String, dynamic> json) => RoutesModel(
         id: json["id"],
         name: json["name"],
         description: json["description"],
         enabled: json["enabled"],
-        journey: json["journey"],
-        journeyContentType: json["journeyContentType"],
-        journeyOptional: json["journeyOptional"],
-        company: Company.fromJson(json["company"]),
+        company: json["company"],
+        coordinates: List<Coordinate>.from(json["coordinates"].map((x) => Coordinate.fromJson(x))),
     );
 
     Map<String, dynamic> toJson() => {
@@ -45,69 +39,27 @@ class RoutesModel {
         "name": name,
         "description": description,
         "enabled": enabled,
-        "journey": journey,
-        "journeyContentType": journeyContentType,
-        "journeyOptional": journeyOptional,
-        "company": company.toJson(),
+        "company": company,
+        "coordinates": List<dynamic>.from(coordinates.map((x) => x.toJson())),
     };
 }
 
-class Company {
-    Company({
-        this.id,
-        this.name,
-        this.legalRepresentative,
-        this.dni,
-        this.enabled,
-        this.companyType,
+class Coordinate {
+    Coordinate({
+        this.latitude,
+        this.length,
     });
 
-    int id;
-    String name;
-    String legalRepresentative;
-    String dni;
-    bool enabled;
-    CompanyType companyType;
+    double latitude;
+    double length;
 
-    factory Company.fromJson(Map<String, dynamic> json) => Company(
-        id: json["id"],
-        name: json["name"],
-        legalRepresentative: json["legalRepresentative"],
-        dni: json["dni"],
-        enabled: json["enabled"],
-        companyType: CompanyType.fromJson(json["companyType"]),
+    factory Coordinate.fromJson(Map<String, dynamic> json) => Coordinate(
+        latitude: json["latitude"].toDouble(),
+        length: json["length"].toDouble(),
     );
 
     Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "legalRepresentative": legalRepresentative,
-        "dni": dni,
-        "enabled": enabled,
-        "companyType": companyType.toJson(),
-    };
-}
-
-class CompanyType {
-    CompanyType({
-        this.id,
-        this.name,
-        this.description,
-    });
-
-    int id;
-    String name;
-    String description;
-
-    factory CompanyType.fromJson(Map<String, dynamic> json) => CompanyType(
-        id: json["id"],
-        name: json["name"],
-        description: json["description"],
-    );
-
-    Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "description": description,
+        "latitude": latitude,
+        "length": length,
     };
 }

@@ -4,7 +4,7 @@ import 'package:busmart/features/login/data/models/login_model.dart';
 import 'package:busmart/features/login/domain/repositories/login_domain_repository.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 
-class LoginDataRepositoryImpl implements LoginDomainRepository {
+class LoginDataRepositoryImpl implements LoginDomainRepositoryINTERFACE {
   final _dataRemoteApi = DataRemoteImpl();
   final _dataLocal = DataLocalImplementation();
 

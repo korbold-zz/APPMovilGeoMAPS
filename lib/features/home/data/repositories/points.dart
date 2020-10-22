@@ -1,36 +1,3 @@
-import 'dart:convert';
-
-import 'package:busmart/api_url.dart';
-import 'package:busmart/features/home/data/datasources/data_local.dart';
-import 'package:busmart/features/home/data/datasources/data_remote.dart';
-import 'package:busmart/features/home/data/models/json_model.dart';
-import 'package:busmart/features/home/domain/repositories/home_domain_repository.dart';
-import 'package:google_maps_flutter_platform_interface/src/types/location.dart';
-import 'package:http/http.dart' as http;
-
-class HomeDataRepositoryIMPL implements HomeDomainRepositoryINTERFACE {
-  final _homeDataRemote = HomeDataRemoteImpl();
-  final _homeDataLocal = HomeDataLocalImplementation();
-
-  @override
-  Future<List<RoutesModel>> getRoutesEntities() async {
-    final token = await _homeDataLocal.loadToken();
-
-    return await _homeDataRemote.getRoutesEntities(token);
-  }
-
-  @override
-  Future<String> getRouteCoordinates(LatLng l1, LatLng l2) async {
-    String url =
-        "https://maps.googleapis.com/maps/api/directions/json?origin=${l1.latitude},${l1.longitude}&destination=${l2.latitude},${l2.longitude}&key=${ModeAppRun.apiGoogleMaps}";
-    http.Response response = await http.get(url);
-    Map values = jsonDecode(response.body);
-    print("====================>>>>>>>>${values}");
-
-    return values["routes"][0]["overview_polyline"]["points"];
-  }
-}
-
 class Routes {
   final List<List<double>> route;
   final List<List<double>> stopBus;

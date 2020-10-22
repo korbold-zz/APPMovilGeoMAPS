@@ -32,7 +32,7 @@ class HomeDataRemoteImpl implements HomeDataRemote {
       _cliente.close();
     }
     if (_uriResponse.statusCode == 200) {
-      return rutasModelFromJson(_uriResponse.body);
+      return routesModelFromJson(_uriResponse.body);
     } else {
       return null;
     }

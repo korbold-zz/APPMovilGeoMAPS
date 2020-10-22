@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:busmart/features/home/data/models/json_model.dart';
 import 'package:busmart/features/home/data/repositories/home_data_repository_impl.dart';
 import 'package:busmart/features/home/domain/entities/coordinates_mode.dart';
 import 'package:busmart/features/home/data/models/home_model.dart';
@@ -45,24 +46,26 @@ class HomeBloc with ChangeNotifier {
 
   //Google routes
 
-  /* getALLRoutes() {
+  Future<List<RoutesModel>> getALLRoutes() async {
+    final response = await _homeDomainRepository.getRoutesEntities();
+    List<Coordinate> coordinate;
+
     try {
-      Future.delayed(Duration(seconds: 4));
-      final response = _homeDomainRepository.getRoutesEntities();
       print(response);
       for (var item in response) {
-        final res = item.journeyOptional;
+        coordinate = item.coordinates;
 
-        final coordinates = coordModelFromJson(res).coordinates;
-        final latLng = _getPoints(raw: coordinates);
+        final latLng = _getPoints(raw: coordinate);
+
         getRoutes1(latLng, Colors.red, item.id.toString());
       }
     } catch (e) {
       print('ERROR ROUTES $e');
     }
-  } */
+    return response;
+  }
 
-  List<Routes> getNewRoutes() {
+  /*  List<Routes> getNewRoutes() {
     final response = _homeDomainRepository.getRoutesEntities();
     for (var item in response) {
       final latLng = _getPoints(raw: item.route);
@@ -74,10 +77,10 @@ class HomeBloc with ChangeNotifier {
       }
     }
     return response;
-  }
+  } */
 
-  List<LatLng> _getPoints({List<List<double>> raw}) {
-    return raw.map((e) => LatLng(e[0], e[1])).toList();
+  List<LatLng> _getPoints({List<Coordinate> raw}) {
+    return raw.map((e) => LatLng(e.latitude, e.length)).toList();
   }
 
   //

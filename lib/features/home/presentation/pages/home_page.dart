@@ -1,16 +1,20 @@
+import 'package:busmart/api_url.dart';
+import 'package:busmart/features/home/data/models/json_model.dart';
 import 'package:busmart/features/home/domain/repositories/home_domain_repository.dart';
 import 'package:busmart/features/home/presentation/bloc/home_bloc.dart';
+import 'package:busmart/features/home/presentation/bloc/home_event.dart';
 
 import 'package:busmart/features/home/presentation/widgets/sliding_widget.dart';
 import 'package:busmart/features/login/presentation/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:search_map_place/search_map_place.dart';
 
 GoogleMapController mapController;
 
 CameraPosition _initialPosition =
-    CameraPosition(target: LatLng(12.949798, 77.470534), zoom: 16);
+    CameraPosition(target: LatLng(-0.217538, -78.5055006), zoom: 16);
 
 void _onMapCreated(GoogleMapController controller) {
   mapController = controller;
@@ -23,7 +27,7 @@ class HomePage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) =>
           HomeBloc(Provider.of<HomeDomainRepositoryINTERFACE>(context))
-            ..getNewRoutes(),
+            ..getALLRoutes(),
       builder: (_, __) => HomePage._(),
     );
   }
@@ -62,47 +66,78 @@ class HomePage extends StatelessWidget {
           //   },
           // ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 8),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), color: Colors.white),
-            child: Row(children: [
-              Expanded(
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    enabledBorder: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    hintText: 'Ejemplo: Mitad del Mundo',
-                  ),
-                ),
-              ),
-              IconButton(icon: Icon(Icons.search), onPressed: () {})
-            ]),
-          ),
+        // Search(),
+        SearchMapPlaceWidget(
+          apiKey: ModeAppRun.apiGoogleMaps,
+          placeType: PlaceType.address,
+          placeholder: 'Ej. Mitad del Mundo',
+          language: 'es',
+          onSelected: (Place place) async {
+            Geolocation geolocation = await place.geolocation;
+            mapController
+                .animateCamera(CameraUpdate.newLatLng(geolocation.coordinates));
+            mapController.animateCamera(
+                CameraUpdate.newLatLngBounds(geolocation.bounds, 0));
+          },
         ),
 
-        Align(
+        /*  Align(
           alignment: Alignment.bottomCenter,
           child: Container(
             height: 70,
-            child: ListView.builder(
-                itemCount: _homeBloc.getNewRoutes().length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, value) {
-                  final data = _homeBloc.getNewRoutes()[value];
-                  return CardRoute(
-                    name: data.name,
-                    latLng: LatLng(data.route[0][0], data.route[0][1]),
-                  );
-                }),
+            child: FutureBuilder(
+              future: _homeBloc.getALLRoutes(),
+              builder: (context, AsyncSnapshot<List<RoutesModel>> snapshot) {
+                return ListView.builder(
+                    itemCount: snapshot.data.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, value) {
+                      final data = snapshot.data
+                          .map((e) => e.journeyOptional[0])
+                          .toList();
+                      return CardRoute(
+                        // name: data,
+                        latLng: LatLng(data[0] as double, data[1] as double),
+                      );
+                    });
+              },
+            ),
           ),
-        )
+        ) */
         // SlidingWidget(),
       ]),
       // floatingActionButton: FloatingActionButton(
       //     child: Icon(Icons.my_location), onPressed: () {})
+    );
+  }
+}
+
+class Search extends StatelessWidget {
+  const Search({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 8),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20), color: Colors.white),
+        child: Row(children: [
+          Expanded(
+            child: TextFormField(
+              decoration: InputDecoration(
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                hintText: 'Ejemplo: Mitad del Mundo',
+              ),
+            ),
+          ),
+          IconButton(icon: Icon(Icons.search), onPressed: () {})
+        ]),
+      ),
     );
   }
 }
@@ -163,7 +198,7 @@ class __MapState extends State<_Map> {
         polylineId: PolylineId("line_one"),
       ),
     );
-
+    HomeEvent().initNotificationsPemision();
     super.initState();
   }
 

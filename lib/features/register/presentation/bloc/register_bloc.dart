@@ -1,10 +1,12 @@
-import 'package:busmart/features/register/data/repositories/register_data_repository.dart';
+import 'package:busmart/features/register/domain/repositories/register_domain_respositoryINTERFACE.dart';
 import 'package:flutter/material.dart';
 
 class RegistrerBloc with ChangeNotifier {
-  final _register = RegisterDataRepository();
+  final RegisterDomainRepositoryINTERFACE _register;
+  bool _resultRegister;
+  RegistrerBloc(this._register);
 
-  sendRegisterData({
+  Future<bool> sendRegisterData({
     String dni,
     String firstName,
     String lastName,
@@ -25,5 +27,8 @@ class RegistrerBloc with ChangeNotifier {
         userName: userName);
 
     return resp;
+    
   }
+
+  get getResultRegister => _resultRegister;
 }

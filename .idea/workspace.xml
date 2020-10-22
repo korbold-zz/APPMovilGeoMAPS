@@ -5,22 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7121c476-9cf8-4c8e-aa5d-b5755aaab674" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/home/homeRepositoryMock.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/data/models/coordinates_mode.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_url.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_url.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/data/datasources/data_remote.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/data/datasources/data_remote.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/home/data/models/json_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/data/models/json_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/data/repositories/home_data_repository.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/domain/repositories/home_repository.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/data/repositories/home_data_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/data/repositories/home_data_repository_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/domain/repositories/home_domain_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/domain/repositories/home_domain_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/home/presentation/bloc/home_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/presentation/bloc/home_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/presentation/pages/data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/presentation/pages/data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/presentation/bloc/home_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/presentation/bloc/home_event.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/home/presentation/pages/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/presentation/pages/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/login/data/repositories/login_data_repositoy_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/data/repositories/login_data_repositoy_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/login/domain/repositories/login_domain_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/domain/repositories/login_domain_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/login/presentation/bloc/login_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/presentation/bloc/login_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/login/presentation/pages/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/presentation/pages/login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/login/presentation/widgets/passwordReset_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/login/presentation/widgets/passwordReset_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/register/data/repositories/register_data_repository.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/register/presentation/bloc/register_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/register/presentation/bloc/register_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/register/presentation/pages/register_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/register/presentation/pages/register_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/theme/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/theme/constants.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/home/data/respository_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/login/bloc/login_bloc_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/login/data/test_login.dart" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +44,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_XL_API_29" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -37,9 +59,9 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -56,38 +78,38 @@
     </option>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
-    <configuration name="Login post" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="Login post" />
-      <option name="testFile" value="$PROJECT_DIR$/test/login/data/test_login.dart" />
+    <configuration name="Send Reset Password" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Send Reset Password" />
+      <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/loginBlocTest.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="Save" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="Save" />
-      <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/login_bloc_test.dart" />
+    <configuration name="Send Session credentials" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Send Session credentials" />
+      <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/loginBlocTest.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="Sessions" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="Sessions" />
-      <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/login_bloc_test.dart" />
+    <configuration name="Send Sign Out" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Send Sign Out" />
+      <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/loginBlocTest.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="getRoutes" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="getRoutes" />
-      <option name="testFile" value="$PROJECT_DIR$/test/home/data/respository_test.dart" />
+    <configuration name="Send if you is initial Session false" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Send if you is initial Session false" />
+      <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/loginBlocTest.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="login" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="login" />
-      <option name="testFile" value="$PROJECT_DIR$/test/login/data/test_login.dart" />
+    <configuration name="Test Login" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Test Login" />
+      <option name="testFile" value="$PROJECT_DIR$/test/login/bloc/loginBlocTest.dart" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter Test.getRoutes" />
-        <item itemvalue="Flutter Test.Save" />
-        <item itemvalue="Flutter Test.Sessions" />
-        <item itemvalue="Flutter Test.Login post" />
-        <item itemvalue="Flutter Test.login" />
+        <item itemvalue="Flutter Test.Send Reset Password" />
+        <item itemvalue="Flutter Test.Send Sign Out" />
+        <item itemvalue="Flutter Test.Send Session credentials" />
+        <item itemvalue="Flutter Test.Test Login" />
+        <item itemvalue="Flutter Test.Send if you is initial Session false" />
       </list>
     </recent_temporary>
   </component>

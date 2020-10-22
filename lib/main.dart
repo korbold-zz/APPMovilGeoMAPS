@@ -1,14 +1,16 @@
-import 'dart:io';
-
 import 'package:busmart/features/home/data/repositories/home_data_repository_impl.dart';
 import 'package:busmart/features/home/domain/repositories/home_domain_repository.dart';
-import 'package:busmart/features/home/presentation/bloc/home_bloc.dart';
+import 'package:busmart/theme/constants.dart';
+import 'package:country_code_picker/country_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:busmart/features/home/presentation/pages/home_page.dart';
 import 'package:busmart/features/login/data/repositories/login_data_repositoy_impl.dart';
 import 'package:busmart/features/login/domain/repositories/login_domain_repository.dart';
 import 'package:busmart/features/login/presentation/bloc/login_bloc.dart';
 import 'package:busmart/features/login/presentation/bloc/login_event.dart';
 import 'package:busmart/features/login/presentation/widgets/intro_page.dart';
+import 'package:busmart/features/register/data/repositories/register_data_repository_IMPL.dart';
+import 'package:busmart/features/register/domain/repositories/register_domain_respositoryINTERFACE.dart';
 import 'package:busmart/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -29,10 +31,33 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: '/',
-      routes: routes(context),
-      // home: HomeVerify(),
+    return MultiProvider(
+      providers: [
+        Provider<LoginDomainRepositoryINTERFACE>(
+            create: (_) => LoginDataRepositoryImpl()),
+        Provider<HomeDomainRepositoryINTERFACE>(
+            create: (_) => HomeDataRepositoryIMPL()),
+        Provider<RegisterDomainRepositoryINTERFACE>(
+            create: (_) => RegisterDataRepositoryIMPL()),
+        ChangeNotifierProvider(create: (_) => LoginEvent()),
+        ChangeNotifierProvider(
+          create: (_) => HomeEvent(),
+        )
+      ],
+      child: MaterialApp(
+        theme: themeAPP,
+        supportedLocales: [
+          Locale('en'),
+          Locale('es'),
+        ],
+        localizationsDelegates: [
+          CountryLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        initialRoute: '/',
+        routes: routes(context),
+      ),
     );
   }
 }
@@ -45,22 +70,9 @@ class HomeVerify extends StatefulWidget {
 class _HomeVerifyState extends State<HomeVerify> {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        Provider<LoginDomainRepository>(
-            create: (_) => LoginDataRepositoryImpl()),
-
-        Provider<HomeDomainRepositoryINTERFACE>(
-          create: (_) => HomeDataRepositoryIMPL(),
-        ),
-        // ChangeNotifierProvider(create: (_) => HomeBloc()),
-        ChangeNotifierProvider(create: (_) => LoginEvent()),
-        ChangeNotifierProvider(create: (_)=> HomeCameraMoveEvent(),)
-      ],
-      child: Builder(builder: (nContext) {
-        return ConsumerSelect.init(nContext);
-      }),
-    );
+    return Builder(builder: (nContext) {
+      return ConsumerSelect.init(nContext);
+    });
   }
 }
 
@@ -69,7 +81,8 @@ class ConsumerSelect extends StatelessWidget {
 
   static Widget init(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => LoginBloc(Provider.of<LoginDomainRepository>(context)),
+      create: (_) =>
+          LoginBloc(Provider.of<LoginDomainRepositoryINTERFACE>(context)),
       builder: (_, __) => ConsumerSelect._(),
     );
   }
@@ -77,6 +90,7 @@ class ConsumerSelect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer(
+      // ignore: missing_return
       builder: (_, LoginBloc user, __) {
         if (user.isLogin) {
           switch (user.status) {

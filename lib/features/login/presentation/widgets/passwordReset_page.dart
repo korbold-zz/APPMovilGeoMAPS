@@ -24,7 +24,7 @@ class _PasswordResetPageState extends State<PasswordResetPage> {
 
   @override
   Widget build(BuildContext context) {
-    final _loginRepository = Provider.of<LoginDomainRepository>(context);
+    final _loginRepository = Provider.of<LoginDomainRepositoryINTERFACE>(context);
 
     final _bloc = LoginBloc(_loginRepository);
     return SafeArea(
